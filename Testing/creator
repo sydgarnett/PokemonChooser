@@ -1,0 +1,45 @@
+#Winter Term Project
+
+class Creator():
+    def __init__(self,day,month,year,Fullname):
+        self.day=day
+        self.month=month
+        self.year=year
+        self.name=Fullname
+    def getFirstName(self):
+        space=self.name.indexOf(" ")
+        firstName=self.name[0:space]
+        return firstName
+    def getLastName(self):
+        space=self.name.indexOf(" ")
+        lastName=self.name[space+1:]
+        return lastName
+    def getDay(self):
+        return self.day
+    def getMonth(self):
+        return self.month
+    def getYear(self):
+        return self.year
+    def countSet(self):
+        alpha="0ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        count=alpha.index(self.name[0:1])
+        return count
+    def birthTotal(self):
+        return self.day+self.month+self.year
+    def decimal(self):
+        deci=0.00
+        first=self.getFirstName()
+        a=countSet(first)
+        c=(float)(a*.1)
+        deci+=c
+        last=self.getLastName()
+        b=countSet(last)
+        d=(float)(b*.1)
+        deci+=d;
+        return deci;
+    def FinalNum(self):
+        FinNum=birthTotal()*decimal();
+        if (FinNum>802.0):
+            return (int)(FinNum-802);
+        return (int)(FinNum);
+    
